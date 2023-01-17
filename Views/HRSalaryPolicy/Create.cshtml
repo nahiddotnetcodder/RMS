@@ -1,0 +1,43 @@
+﻿@model RMS.Models.HRSalaryPolicy
+@{
+    ViewData["Title"] = "Human Resource (HR) > Maintenance > Salary Policy > Create Salary Policy";
+}
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HRSPName" class="control-label"></label>
+                <input asp-for="HRSPName" class="form-control" />
+                <span asp-validation-for="HRSPName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ADDUC" class="control-label"></label>
+                <select asp-for="ADDUC" class="form-control" asp-items="@Html.GetEnumSelectList<ADDUC>()"></select>
+                <span asp-validation-for="ADDUC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PerNPer" class="control-label"></label>
+                <select asp-for="PerNPer" class="form-control" asp-items="@Html.GetEnumSelectList<PerNPer>()"></select>
+                <span asp-validation-for="PerNPer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HRSPPercent" class="control-label"></label>
+                <input asp-for="HRSPPercent" class="form-control" />
+                <span asp-validation-for="HRSPPercent" class="text-danger"></span>
+            </div>
+            <div class="form-group btn-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="index"
+                   asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,42 @@
+﻿@model RMS.Models.HREmpRoaster
+@{
+    ViewData["Title"] = "Human Resource (HR) > Operations > Employee Roaster > Delete Employee Roster";
+}
+<h5 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h5>
+<div>
+    <h5 class="text-danger">Are you sure you want to delete this?</h5>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HREDId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HREmpDetails.HREDEName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HRERDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model=> model.HRERDate)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsPresent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model=> model.IsPresent)
+        </dd>
+
+    </dl>
+    <form asp-action="Delete">
+        <div class="text-danger btn-group" asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="HRERId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="btn btn-secondary" asp-action="index"
+           asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

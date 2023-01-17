@@ -1,0 +1,69 @@
+﻿@model RMS.Models.HRLeaveDetail
+@{
+    ViewData["Title"] = "Human Resource (HR) >  Operations > Leave Details > Delete Leave Details";
+}
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<h5 class="text-danger" style="margin-left: 10px;">Are you sure you want to delete this?</h5>
+<hr />
+<div class="row">
+    <!-- Form Area-->
+    <form asp-action="Delete" >
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="HRLDId" />
+        <div class="btn-group">
+            <div class="col-md-12">
+                <div class="row">
+                    <!-- controls section -->
+                    <div class="form-group col-6">
+                        <label asp-for="HREDId" class="control-label"></label>
+                        <input asp-for="HREmpDetails.HREDEName" class="form-control" readonly/>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HRLPId" class="control-label"></label>
+                        <input asp-for="HRLeavePolicy.HRLPName" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HRLDAppSl" class="control-label"></label>
+                        <input asp-for="HRLDAppSl" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HRLDAppDate" class="control-label"></label>
+                        <input asp-for="HRLDAppDate" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HRLDLeaveSDate" class="control-label"></label>
+                        <input asp-for="HRLDLeaveSDate" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HRLDLeaveEDate" class="control-label"></label>
+                        <input asp-for="HRLDLeaveEDate" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HRLDReason" class="control-label"></label>
+                        <textarea asp-for="HRLDReason" class="form-control" readonly></textarea>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HREDIdSu" class="control-label"></label>
+                        <input asp-for="HREDIdSu" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HRLDTDay" class="control-label"></label>
+                        <input asp-for="HRLDTDay" class="form-control" readonly/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a class="btn btn-secondary" asp-action="index"
+               asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

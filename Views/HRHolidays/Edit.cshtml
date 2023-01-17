@@ -1,0 +1,39 @@
+﻿@model RMS.Models.HRHolidays
+@{
+    ViewData["Title"] = "Human Resource (HR) > Operations > Holidays > Edit Holiday";
+}
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HRHId" />
+            <div class="form-group">
+                <label asp-for="HRHName" class="control-label"></label>
+                <input asp-for="HRHName" class="form-control" />
+                <span asp-validation-for="HRHName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HRHStartDate" class="control-label"></label>
+                <input asp-for="HRHStartDate" class="form-control" />
+                <span asp-validation-for="HRHStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HRHEndDate" class="control-label"></label>
+                <input asp-for="HRHEndDate" class="form-control" />
+                <span asp-validation-for="HRHEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group btn-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="index"
+                   asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

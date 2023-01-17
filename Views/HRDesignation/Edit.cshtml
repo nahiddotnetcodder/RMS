@@ -1,0 +1,32 @@
+﻿@model RMS.Models.HRDesignation
+@{
+    ViewData["Title"] = "Human Resource (HR) > Maintenance > Designation >Edit Designation";
+}
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HRDeId" />
+            <div class="form-group">
+                <label asp-for="HRDeName" class="control-label"></label>
+                <input asp-for="HRDeName" class="form-control" />
+                <span asp-validation-for="HRDeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HRDeDes" class="control-label"></label>
+                <input asp-for="HRDeDes" class="form-control" />
+                <span asp-validation-for="HRDeDes" class="text-danger"></span>
+            </div>
+            <div class="form-group btn-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="index"
+                   asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

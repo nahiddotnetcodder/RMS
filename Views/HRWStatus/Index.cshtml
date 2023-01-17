@@ -1,0 +1,86 @@
+﻿@model IEnumerable<RMS.Models.HRWStatus>
+@{
+
+    ViewData["Title"] = "Human Resource (HR) > Maintenance > Work Status > Work Status List";
+    SortModel sortModel = (SortModel)ViewData["sortModel"];
+    PagerModel pager = ViewBag.Pager;
+    int i = 1;
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<div class="container-fluid btn-group">
+    <div class="col-10">
+        <h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+    </div>
+    <div class="col-2 justify-content-end">
+        <p class="pb-3">
+            <a asp-action="Create" class="btn btn-success">Create New</a>
+        </p>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-12">
+        <partial name="_topBar" model="@pager" />
+    </div>
+</div>
+<table class="table table-striped border">
+    <thead>
+        <tr>
+            <th>SL</th>
+            <th>
+                <i class="@sortModel.GetColumn("HRWSName").SortIcon" arial-hidden="true"></i>
+                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("HRWSName").SortExpression">
+                    @Html.DisplayNameFor(model => model.HRWSName)
+                </a>
+            </th>
+            <th>
+                <i class="@sortModel.GetColumn("HRWSDes").SortIcon" arial-hidden="true"></i>
+                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("HRWSDes").SortExpression">
+                    @Html.DisplayNameFor(model => model.HRWSDes)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HRWSName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HRWSDes)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Edit" asp-route-id="@item.HRWSId">
+                            <span class="btn btn-sm btn-primary">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                            </span>
+                        </a>                       
+                    </div>
+                    <div class="btn-group">
+                        <a asp-action="Delete" asp-route-id="@item.HRWSId">
+                            <span class="btn btn-sm btn-danger">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </span>
+                         </a>
+                    </div>                   
+                </td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-12">
+        <partial name="_bottomBar" model="@pager" />
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

@@ -1,0 +1,82 @@
+﻿@model RMS.Models.StoreGReceive
+
+@{
+    ViewData["Title"] = "Store & Inventory > Item Movement > Item Receive > Create Item";
+    
+}
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<hr />
+
+<div class="row">
+    <!-- Form Area-->
+    <form asp-action="Create" >
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="btn-group">
+            <div class="col-md-10 m-auto">
+                <div class="row">
+                    <!-- controls section -->
+                    <div class="form-group col-6">
+                        <label asp-for="GRDate" class="control-label"></label>
+                        <input asp-for="GRDate" class="form-control" />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="SIGId" class="control-label"></label>
+                        <select asp-for="SIGId" class="form-control" asp-items="ViewBag.IGen"></select>
+                        <span asp-validation-for="SIGId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="SIGId" class="control-label">Item Code</label>
+                        <select asp-for="SIGId" class="form-control" asp-items="ViewBag.IGenCode"></select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="SCId" class="control-label"></label>
+                        <select asp-for="SCId" class="form-control" asp-items="ViewBag.StoreCategory"></select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="SSCId" class="control-label"></label>
+                        <select asp-for="SSCId" class="form-control" asp-items="ViewBag.StoreSCategory"></select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="SUId" class="control-label"></label>
+                        <select asp-for="SUId" class="form-control" asp-items="ViewBag.StoreUnits"></select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="GRUPrice" class="control-label"></label>
+                        <input asp-for="GRUPrice" class="form-control" value=""/>
+                        <span asp-validation-for="GRUPrice" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label asp-for="GRQty" class="control-label"></label>
+                        <input asp-for="GRQty" class="form-control" value=""/>
+                        <span asp-validation-for="GRQty" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="GRTPrice" class="control-label"></label>
+                        <input asp-for="GRTPrice" class="form-control" value="" readonly/>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label asp-for="GRRemarks" class="control-label"></label>
+                        <textarea asp-for="GRRemarks" class="form-control"></textarea>
+                        <span asp-validation-for="GRRemarks" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group btn-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a class="btn btn-secondary" asp-action="index"
+                       asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    
+
+}

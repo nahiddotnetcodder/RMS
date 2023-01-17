@@ -1,0 +1,31 @@
+﻿@model RMS.Models.StoreUnit
+
+@{
+    ViewData["Title"] = "Store & Inventory > Maintenance > Unit > Edit Unit";
+}
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SUId" />
+            <div class="form-group">
+                <label asp-for="SUName" class="control-label"></label>
+                <input asp-for="SUName" class="form-control" />
+                <span asp-validation-for="SUName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group btn-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="index"
+                   asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

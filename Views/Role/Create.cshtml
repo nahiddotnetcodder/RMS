@@ -1,0 +1,41 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Create Role";
+	var statusList = ViewData["Status"] as List<NameIdPair>;
+    var statusListSelect = new SelectList(statusList, "Id", "Name");
+}
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Create Role</h2>
+			<hr />
+		</div>
+		<div class="form-group">
+			<label asp-for="RoleName"></label>
+			<input asp-for="RoleName" class="form-control" />
+			<span asp-validation-for="RoleName" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="Description"></label>
+			<input asp-for="Description" class="form-control" />
+			<span asp-validation-for="Description" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="CurrentStatusId"></label>
+			<select asp-for="CurrentStatusId" asp-items="statusListSelect" class="custom-select">  
+			   <option value="">Choose Status</option>  
+			</select>
+			<span asp-validation-for="CurrentStatusId" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+		<a asp-controller="Role" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

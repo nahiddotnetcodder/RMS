@@ -1,0 +1,79 @@
+﻿@model IEnumerable<RMS.Models.StoreDClose>
+@{
+    ViewData["Title"] = "Point Of Sale > Maintenance > Day Close > Day Close List";
+    SortModel sortModel = (SortModel)ViewData["sortModel"];
+    PagerModel pager = ViewBag.Pager;
+    
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<div class="container-fluid btn-group">
+    <div class="col-10">
+        <h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+    </div>
+    <div class="col-2 justify-content-end">
+        <p class="pb-3">
+            <a asp-action="Create" class="btn btn-success">Create New</a>
+        </p>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-12">
+        <partial name="_topBar" model="@pager" />
+    </div>
+</div>
+<table class="table table-striped border m-0" id="myTable">
+    <thead>
+        <tr>
+            
+            <th>
+                <i class="@sortModel.GetColumn("RDCDate").SortIcon" arial-hidden="true"></i>
+                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("RDCDate").SortExpression">
+                    @Html.DisplayNameFor(model => model.SDCDate)
+                </a>
+            </th>
+            <th>
+                <i class="@sortModel.GetColumn("CUser").SortIcon" arial-hidden="true"></i>
+                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("CUser").SortExpression">
+                    @Html.DisplayNameFor(model => model.CUser)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDCDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CUser)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a asp-action="Edit" asp-route-id="@item.SDCId">
+                            <span class="btn btn-sm btn-primary">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+           
+        }
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-12">
+        <partial name="_bottomBar" model="@pager" />
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+
+
