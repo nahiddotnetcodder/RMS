@@ -5,9 +5,12 @@ namespace RMS.Controllers
     public class StoreDCloseController : Controller
     {
         private readonly IStoreDClose _Repo;
-        public StoreDCloseController(IStoreDClose repo) // here the repository will be passed by the dependency injection.
+        private readonly RmsDbContext _db;
+
+        public StoreDCloseController(IStoreDClose repo, RmsDbContext db) // here the repository will be passed by the dependency injection.
         {
             _Repo = repo;
+            _db = db;
         }
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pg = 1, int pageSize = 5)
         {
@@ -93,6 +96,12 @@ namespace RMS.Controllers
             }
             else
                 return RedirectToAction(nameof(Index), new { pg = currentPage });
+        }
+        [HttpGet]
+        public JsonResult GetDateValue()
+        {
+            var data = _db.StoreDClose.Select(x => x.SDCDate);
+            return Json(data);
         }
     }
 }

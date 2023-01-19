@@ -1,26 +1,28 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using RMS.Repositories;
+﻿using DevExpress.Printing.Utils.DocumentStoring;
+using DevExpress.XtraEditors.Filtering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Linq.Expressions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 namespace RMS.Controllers
 {
     [Authorize]
     public class StoreGIssueController : Controller
     {
-        private readonly IStoreGIssue _Repo;
-        private readonly IHRDepartment _hrdepartmentRepo;
+        private readonly IStoreGIssueMaster _Repo;
         private readonly IStoreIGen _storeigen;
-        private readonly IStoreCategory _category;
+        private readonly IStoreGoodsStock _goodsStock;
+        private readonly IStoreCategory _storeCat;
         private readonly IStoreSCategory _subCat;
         private readonly IStoreUnit _unit;
         private readonly RmsDbContext _context;
 
-        public StoreGIssueController(IStoreGIssue repo, IHRDepartment hrdepartmentRepo, IStoreIGen storeigen, IStoreCategory category, IStoreSCategory subCat, IStoreUnit unit, RmsDbContext context) // here the repository will be passed by the dependency injection.
+        public StoreGIssueController(IStoreGIssueMaster repo, IStoreIGen storeigen, IStoreGoodsStock goodsStock, IStoreCategory storeCat, IStoreSCategory subCat, IStoreUnit unit,RmsDbContext context) // here the repository will be passed by the dependency injection.
         {
             _Repo = repo;
-            _hrdepartmentRepo = hrdepartmentRepo;
             _storeigen = storeigen;
-            _category = category;
+            _goodsStock = goodsStock;
+            _storeCat = storeCat;
             _subCat = subCat;
             _unit = unit;
             _context = context;
@@ -28,62 +30,56 @@ namespace RMS.Controllers
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pg = 1, int pageSize = 10)
         {
             SortModel sortModel = new SortModel();
-            sortModel.AddColumn("GIdate");
-            sortModel.AddColumn("StoreIG");
-            sortModel.AddColumn("StoreCategory");
-            sortModel.AddColumn("StoreSCategory");
-            sortModel.AddColumn("StoreUnit");
-            sortModel.AddColumn("GIUPrice");
-            sortModel.AddColumn("GIQty");
+            sortModel.AddColumn("GRMDate");
             sortModel.AddColumn("HRDepart");
+
             sortModel.ApplySort(sortExpression);
             ViewData["sortModel"] = sortModel;
             ViewBag.SearchText = SearchText;
-            PaginatedList<StoreGIssue> items = _Repo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder, SearchText, pg, pageSize);
+            PaginatedList<StoreGIssueMaster> items = _Repo.GetItems(sortModel.SortedProperty, sortModel.SortedOrder, SearchText, pg, pageSize);
             var pager = new PagerModel(items.TotalRecords, pg, pageSize);
             pager.SortExpression = sortExpression;
             this.ViewBag.Pager = pager;
             TempData["CurrentPage"] = pg;
             return View(items);
         }
-
         private void PopulateViewbags()
         {
-            ViewBag.HRDepartment = GetHRDepartments();
-            ViewBag.StoreIGen = GetStoreIGen();
-            ViewBag.IGenCode = GetStoreIGenCode();
             ViewBag.StoreCategory = GetCategory();
             ViewBag.StoreSCategory = GetSubCategory();
-            ViewBag.StoreUnit = GetUnit();
+            ViewBag.StoreUnits = GetUnit();
+            ViewBag.IGen = GetStoreIGen();
+            ViewBag.IGenCode = GetStoreIGenCode();
         }
 
         public IActionResult Create()
         {
-            StoreGIssue item = new StoreGIssue();
+            StoreGIssueMaster item = new StoreGIssueMaster();
             PopulateViewbags();
             return View(item);
         }
         [HttpPost]
-        public IActionResult Create(StoreGIssue item)
+        public IActionResult Create(StoreGIssueMaster item)
         {
             bool bolret = false;
             string errMessage = "";
             try
-            {    
+            {
                 if (errMessage == "")
                 {
-                    var itemStock = _context.StoreGoodsStock.FirstOrDefault(x => x.SIGId == item.SIGId).SGSQty;
-                    if (item.GIQty > itemStock)
-                    {
-                        TempData["SuccessMessage"] = "Out of Stock";
-                        return View(item);
-                    }
-                    else
-                    {
-                        itemStock -= item.GIQty;
-                        _context.StoreGoodsStock.FirstOrDefault(x => x.SIGId == item.SIGId).SGSQty = itemStock;
-                        _context.SaveChanges();
-                    }
+                    //var existingRecord = _context.StoreGoodsStock.FirstOrDefault(x => x.SIGId == item.SIGId);
+                    //if (existingRecord != null)
+                    //{
+                    //    existingRecord.SGSQty += item.GRQty;
+                    //    existingRecord.SGSUPrice += item.GRTPrice;
+                    //    _context.SaveChanges();
+                    //}
+                    //else
+                    //{
+                    //    var newRecord = new StoreGoodsStock { SIGId = item.SIGId, SGSQty = item.GRQty, SGSUPrice=item.GRTPrice };
+                    //    _context.StoreGoodsStock.Add(newRecord);
+                    //    _context.SaveChanges();
+                    //}
 
                     item = _Repo.Create(item);
                     bolret = true;
@@ -102,25 +98,25 @@ namespace RMS.Controllers
             }
             else
             {
-                TempData["SuccessMessage"] = "" + item.GIId.ToString() + " Created Successfully";
+                TempData["SuccessMessage"] = "" + item.GIMId.ToString() + " Created Successfully";
                 return RedirectToAction(nameof(Index));
             }
         }
         public IActionResult Details(int id) //Read
         {
-            StoreGIssue item = _Repo.GetItem(id);
+            StoreGIssueMaster item = _Repo.GetItem(id);
             PopulateViewbags();
             return View(item);
         }
         public IActionResult Edit(int id)
         {
-            StoreGIssue item = _Repo.GetItem(id);
+            StoreGIssueMaster item = _Repo.GetItem(id);
             PopulateViewbags();
             TempData.Keep();
             return View(item);
         }
         [HttpPost]
-        public IActionResult Edit(StoreGIssue item)
+        public IActionResult Edit(StoreGIssueMaster item)
         {
             bool bolret = false;
             string errMessage = "";
@@ -129,7 +125,7 @@ namespace RMS.Controllers
                 if (errMessage == "")
                 {
                     item = _Repo.Edit(item);
-                    TempData["SuccessMessage"] = item.GIId.ToString() + ", Saved Successfully";
+                    TempData["SuccessMessage"] ="Saved Successfully";
                     bolret = true;
                 }
             }
@@ -151,13 +147,13 @@ namespace RMS.Controllers
         }
         public IActionResult Delete(int id)
         {
-            StoreGIssue item = _Repo.GetItem(id);
+            StoreGIssueMaster item = _Repo.GetItem(id);
             PopulateViewbags();
             TempData.Keep();
             return View(item);
         }
         [HttpPost]
-        public IActionResult Delete(StoreGIssue item)
+        public IActionResult Delete(StoreGIssueMaster item)
         {
             try
             {
@@ -173,28 +169,10 @@ namespace RMS.Controllers
             int currentPage = 1;
             if (TempData["CurrentPage"] != null)
                 currentPage = (int)TempData["CurrentPage"];
-            TempData["SuccessMessage"] = item.GIId.ToString() + " Deleted Successfully";
+            TempData["SuccessMessage"] = item.GIMId.ToString() + " Deleted Successfully";
             return RedirectToAction(nameof(Index), new { pg = currentPage });
         }
 
-
-        private List<SelectListItem> GetHRDepartments()
-        {
-            var lstDepartment = new List<SelectListItem>();
-            PaginatedList<HRDepartment> items = _hrdepartmentRepo.GetItems("HRDName", SortOrder.Ascending, "", 1, 1000);
-            lstDepartment = items.Select(ut => new SelectListItem()
-            {
-                Value = ut.HRDId.ToString(),
-                Text = ut.HRDName
-            }).ToList();
-            var defItem = new SelectListItem()
-            {
-                Value = "",
-                Text = "----Select Department----"
-            };
-            lstDepartment.Insert(0, defItem);
-            return lstDepartment;
-        }
         private List<SelectListItem> GetStoreIGen()
         {
             var lstDepartment = new List<SelectListItem>();
@@ -202,7 +180,7 @@ namespace RMS.Controllers
             lstDepartment = items.Select(ut => new SelectListItem()
             {
                 Value = ut.SIGId.ToString(),
-                Text = ut.SIGItemCode + " - " + ut.SIGItemName
+                Text = ut.SIGItemCode  + "   " + ut.SIGItemName
             }).ToList();
             var defItem = new SelectListItem()
             {
@@ -219,7 +197,7 @@ namespace RMS.Controllers
             lstDepartment = items.Select(ut => new SelectListItem()
             {
                 Value = ut.SIGId.ToString(),
-                Text = ut.SIGItemCode
+                Text = ut.SIGItemCode 
             }).ToList();
             var defItem = new SelectListItem()
             {
@@ -232,7 +210,7 @@ namespace RMS.Controllers
         private List<SelectListItem> GetCategory()
         {
             var storeCat = new List<SelectListItem>();
-            PaginatedList<StoreCategory> items = _category.GetItems("SCName", SortOrder.Ascending, "", 1, 1000);
+            PaginatedList<StoreCategory> items = _storeCat.GetItems("SCName", SortOrder.Ascending, "", 1, 1000);
             storeCat = items.Select(ut => new SelectListItem()
             {
                 Value = ut.SCId.ToString(),
@@ -280,5 +258,17 @@ namespace RMS.Controllers
             unit.Insert(0, defItem);
             return unit;
         }
+        [AcceptVerbs("Get", "Post")]
+        public JsonResult IsItemExists(string code, int id)
+        {
+            bool isExists = _Repo.IsItemExists(code, id);
+
+            if (isExists)
+                return Json(data: false);
+            else
+                return Json(data: true);
+        }
+        
     }
 }
+

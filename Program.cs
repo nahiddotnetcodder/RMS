@@ -53,7 +53,7 @@ builder.Services.AddScoped<IHRWStatus, HRWStatusRepo>();
 
 builder.Services.AddScoped<IStoreCategory, StoreCategoryRepo>();
 builder.Services.AddScoped<IStoreDClose, StoreDCloseRepo>();
-builder.Services.AddScoped<IStoreGIssue, StoreGIssueRepo>();
+builder.Services.AddScoped<IStoreGIssueMaster, StoreGIssueMasterRepo>();
 builder.Services.AddScoped<IStoreGoodsStock, StoreGoodsStockRepo>();
 builder.Services.AddScoped<IStoreGReceive, StoreGReceiveRepo>();
 builder.Services.AddScoped<IStoreIGen, StoreIGenRepo>();

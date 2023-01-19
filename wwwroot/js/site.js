@@ -18,7 +18,6 @@ $("#GRUPrice, #GRQty").keyup(function () {
     var y = $("#GRQty").val();
 
     var total = x * y;
-    console.log(total);
 
     $("#GRTPrice").val(total);
 });
@@ -29,19 +28,15 @@ $("#GIUPrice, #GIQty").keyup(function () {
     var y = $("#GIQty").val();
 
     var total = x * y;
-    console.log(total);
 
     $("#GITPrice").val(total);
 });
 
 
-//get date
-$.ajax({
-    url: '/StoreDClose',
-    type: 'GET',
-    success: function (data) {
-        $("#RDCDate").val(data);
-    }
-});
-
-
+//fetch('/StoreDClose/GetDateValue')
+//    .then(response => response.json())
+//    .then(data => {
+//        // Do something with the data here, such as displaying it on the page
+//        $("#GRDate").val(data);
+//        alert(data);
+//});

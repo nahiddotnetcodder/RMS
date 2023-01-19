@@ -1,0 +1,433 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RMS
+build_property.RootNamespace = RMS
+build_property.ProjectDir = E:\Project CIT (Nahid Hasan)\RMS\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\Project CIT (Nahid Hasan)\RMS
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/_AuthLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX0F1dGhMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDepartment/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXBhcnRtZW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDepartment/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXBhcnRtZW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDepartment/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXBhcnRtZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDepartment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXBhcnRtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDesignation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXNpZ25hdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDesignation/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXNpZ25hdGlvblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDesignation/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXNpZ25hdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRDesignation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJEZXNpZ25hdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpAtt/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBBdHRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpAtt/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBBdHRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpAtt/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBBdHRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpAtt/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBBdHRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBEZXRhaWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBEZXRhaWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBEZXRhaWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBEZXRhaWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBEZXRhaWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpRoaster/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBSb2FzdGVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpRoaster/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBSb2FzdGVyXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpRoaster/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBSb2FzdGVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpRoaster/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBSb2FzdGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpSalary/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBTYWxhcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpSalary/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBTYWxhcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpSalary/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBTYWxhcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HREmpSalary/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJFbXBTYWxhcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRHolidays/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJIb2xpZGF5c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRHolidays/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJIb2xpZGF5c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRHolidays/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJIb2xpZGF5c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRHolidays/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJIb2xpZGF5c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeaveDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZURldGFpbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeaveDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZURldGFpbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeaveDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZURldGFpbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeaveDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZURldGFpbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeaveDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZURldGFpbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeavePolicy/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZVBvbGljeVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeavePolicy/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZVBvbGljeVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeavePolicy/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZVBvbGljeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRLeavePolicy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJMZWF2ZVBvbGljeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRSalaryPolicy/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJTYWxhcnlQb2xpY3lcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRSalaryPolicy/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJTYWxhcnlQb2xpY3lcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRSalaryPolicy/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJTYWxhcnlQb2xpY3lcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRSalaryPolicy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJTYWxhcnlQb2xpY3lcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWeekend/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXZWVrZW5kXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWeekend/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXZWVrZW5kXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWeekend/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXZWVrZW5kXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWeekend/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXZWVrZW5kXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWStatus/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXU3RhdHVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWStatus/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXU3RhdHVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWStatus/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXU3RhdHVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/HRWStatus/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJXU3RhdHVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Permission/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVybWlzc2lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Role/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Role/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Role/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Shared/_bottomBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9ib3R0b21CYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Shared/_topBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF90b3BCYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreCategory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVDYXRlZ29yeVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreCategory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVDYXRlZ29yeVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreCategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVDYXRlZ29yeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVDYXRlZ29yeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreDClose/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVEQ2xvc2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreDClose/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVEQ2xvc2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreDClose/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVEQ2xvc2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGIssue/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHSXNzdWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGoodsStock/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHb29kc1N0b2NrXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGoodsStock/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHb29kc1N0b2NrXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGoodsStock/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHb29kc1N0b2NrXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGReceive/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHUmVjZWl2ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGReceive/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHUmVjZWl2ZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGReceive/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHUmVjZWl2ZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGReceive/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHUmVjZWl2ZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreGReceive/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVHUmVjZWl2ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreIGen/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVJR2VuXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreIGen/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVJR2VuXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreIGen/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVJR2VuXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreIGen/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVJR2VuXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreIGen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVJR2VuXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreSCategory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVTQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreSCategory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVTQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreSCategory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVTQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreSCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVTQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreUnit/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVVbml0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreUnit/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVVbml0XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreUnit/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVVbml0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/StoreUnit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVVbml0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Project CIT (Nahid Hasan)/RMS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,12 +1,11 @@
-﻿
-@model IEnumerable<RMS.Models.StoreGIssue>
+﻿@model IEnumerable<RMS.Models.StoreGIssueMaster>
 @{
-    ViewData["Title"] = "Store & Inventory > Item Movement > Item Issue > Item Issue List";
+    ViewData["Title"] = "Store & Inventory > Item Movement > Item Issue > Item List";
     SortModel sortModel = (SortModel)ViewData["sortModel"];
     PagerModel pager = ViewBag.Pager;
     int i = 1;
 }
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
 <div class="container-fluid btn-group">
     <div class="col-10">
         <h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
@@ -18,11 +17,11 @@
     </div>
 </div>
 <br />
-<div class="row">
+@*<div class="row">
     <div class="col-12">
         <partial name="_topBar" model="@pager" />
     </div>
-</div>
+</div>*@
 <table class="table table-striped border m-0">
     <thead>
         <tr>
@@ -30,44 +29,18 @@
                 SL
             </th>
             <th>
-                <i class="@sortModel.GetColumn("GIDate").SortIcon" arial-hidden="true"></i>
-                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("GIDate").SortExpression">
-                    @Html.DisplayNameFor(model => model.GIDate)
-                </a>
+                @Html.DisplayNameFor(model => model.GIMDate)
+                @*<i class="@sortModel.GetColumn("GIMDate").SortIcon" arial-hidden="true"></i>
+                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("GIMDate").SortExpression">
+                    @Html.DisplayNameFor(model => model.GIMDate)
+                </a>*@
             </th>
-            <th>
-                <i class="@sortModel.GetColumn("StoreIG").SortIcon" arial-hidden="true"></i>
-                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("StoreIG").SortExpression">
-                    @Html.DisplayNameFor(model => model.StoreIG.SIGItemName)
-                </a>
-            </th>
-           
-             <th>
-                <i class="@sortModel.GetColumn("StoreUnit").SortIcon" arial-hidden="true"></i>
-                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("StoreUnit").SortExpression">
-                    @Html.DisplayNameFor(model => model.StoreUnit.SUName)
-                </a>
-            </th>
-            <th>
-                <i class="@sortModel.GetColumn("GIUPrice").SortIcon" arial-hidden="true"></i>
-                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("GIUPrice").SortExpression">
-                    @Html.DisplayNameFor(model => model.GIUPrice)
-                </a>
-            </th>
-            <th>
-                <i class="@sortModel.GetColumn("GIQty").SortIcon" arial-hidden="true"></i>
-                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("GIQty").SortExpression">
-                    @Html.DisplayNameFor(model => model.GIQty)
-                </a>
-            </th>
-           
-           <th>Total Price</th>
             <th>
                 <i class="@sortModel.GetColumn("HRDepart").SortIcon" arial-hidden="true"></i>
                 <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("HRDepart").SortExpression">
                     @Html.DisplayNameFor(model => model.HRDepart.HRDName)
                 </a>
-            </th>     
+            </th>
 
             <th></th>
         </tr>
@@ -78,50 +51,33 @@
             <tr>
                 <td>@i</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.GIDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StoreIG.SIGItemName)
-                </td>
-                
-                <td>
-                    @Html.DisplayFor(modelItem => item.StoreUnit.SUName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GIUPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GIQty)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GITPrice)
+                    @Html.DisplayFor(modelItem => item.GIMDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.HRDepart.HRDName)
-                </td>            
-
+                </td>
                 <td>
                     <div class="btn-group">
-                        <a asp-action="Edit" asp-route-id="@item.GIId">
+                        <a asp-action="Edit" asp-route-id="@item.GIMId">
                             <span class="btn btn-sm btn-primary">
                                 <i class="fa fa-edit" aria-hidden="true"></i>
                             </span>
                         </a>
                     </div>
-                     <div class="btn-group">
-                        <a asp-action="Details" asp-route-id="@item.GIId">
+                    <div class="btn-group">
+                        <a asp-action="Details" asp-route-id="@item.GIMId">
                             <span class="btn btn-sm btn-dark">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                             </span>
                         </a>
                     </div>
                     <div class="btn-group">
-                        <a asp-action="Delete" asp-route-id="@item.GIId">
+                        <a asp-action="Delete" asp-route-id="@item.GIMId">
                             <span class="btn btn-sm btn-danger">
                                 <i class="fa fa-trash" aria-hidden="true"></i>
                             </span>
                         </a>
-                    </div>                   
+                    </div>
                 </td>
             </tr>
             i++;
@@ -138,5 +94,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-
-

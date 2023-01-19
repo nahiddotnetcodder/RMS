@@ -16,7 +16,7 @@ namespace RMS.Models
         [Required]
         [DisplayName("Current Date:")]
         [DataType(DataType.Date)]
-        public DateTime SDCDate { get; set; }= DateTime.Now;
+        public DateTime SDCDate { get; set; }
 
         [Required]
         [StringLength(50)]

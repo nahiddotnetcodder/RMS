@@ -29,7 +29,8 @@
         public virtual DbSet<HRWStatus> HRWStatus { get; set; }
         public virtual DbSet<StoreDClose> StoreDClose { get; set; }
         public virtual DbSet<StoreCategory> StoreCategory { get; set; }
-        public virtual DbSet<StoreGIssue> StoreGIssue { get; set; }
+        public virtual DbSet<StoreGIssueMaster> StoreGIssueMasters { get; set; }
+        public virtual DbSet<StoreGIssueDetails> StoreGIssueDetails { get; set; }
         public virtual DbSet<StoreGoodsStock> StoreGoodsStock { get; set; }
         public virtual DbSet<StoreGReceive> StoreGReceive { get; set; }
         public virtual DbSet<StoreIGen> StoreIGen { get; set; }

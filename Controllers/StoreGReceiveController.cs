@@ -187,7 +187,7 @@ namespace RMS.Controllers
             lstDepartment = items.Select(ut => new SelectListItem()
             {
                 Value = ut.SIGId.ToString(),
-                Text = ut.SIGItemCode + " - " + ut.SIGItemName
+                Text = ut.SIGItemCode  + "   " + ut.SIGItemName
             }).ToList();
             var defItem = new SelectListItem()
             {
@@ -204,7 +204,7 @@ namespace RMS.Controllers
             lstDepartment = items.Select(ut => new SelectListItem()
             {
                 Value = ut.SIGId.ToString(),
-                Text = ut.SIGItemCode + " - " + ut.SIGItemName
+                Text = ut.SIGItemCode 
             }).ToList();
             var defItem = new SelectListItem()
             {
@@ -275,6 +275,7 @@ namespace RMS.Controllers
             else
                 return Json(data: true);
         }
+        
     }
 }
 

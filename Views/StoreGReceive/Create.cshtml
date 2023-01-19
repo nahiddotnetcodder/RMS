@@ -1,8 +1,6 @@
 ﻿@model RMS.Models.StoreGReceive
-
 @{
     ViewData["Title"] = "Store & Inventory > Item Movement > Item Receive > Create Item";
-    
 }
 <h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
 <hr />
@@ -17,7 +15,7 @@
                     <!-- controls section -->
                     <div class="form-group col-6">
                         <label asp-for="GRDate" class="control-label"></label>
-                        <input asp-for="GRDate" class="form-control" />
+                        <input asp-for="GRDate" class="form-control" disabled/>
                     </div>
                     <div class="form-group col-6">
                         <label asp-for="SIGId" class="control-label"></label>

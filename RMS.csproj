@@ -4,6 +4,8 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\StoreGIssue\Create.cshtml" />
+    <Content Remove="Views\StoreGIssue\Delete.cshtml" />
+    <Content Remove="Views\StoreGIssue\Details.cshtml" />
+    <Content Remove="Views\StoreGIssue\Edit.cshtml" />
     <Content Remove="wwwroot\css\site.css~RF8f390a.TMP" />
   </ItemGroup>
 
@@ -91,13 +97,13 @@
     <None Include="Views\StoreDClose\Create.cshtml" />
     <None Include="Views\StoreDClose\Edit.cshtml" />
     <None Include="Views\StoreDClose\Index.cshtml" />
-    <None Include="Views\StoreGIssue\Delete.cshtml" />
-    <None Include="Views\StoreGIssue\Details.cshtml" />
-    <None Include="Views\StoreGIssue\Edit.cshtml" />
-    <None Include="Views\StoreGIssue\Index.cshtml" />
     <None Include="Views\StoreGoodsStock\Delete.cshtml" />
     <None Include="Views\StoreGoodsStock\Edit.cshtml" />
     <None Include="Views\StoreGoodsStock\Index.cshtml" />
+    <None Include="Views\StoreGIssue\Create.cshtml" />
+    <None Include="Views\StoreGIssue\Delete.cshtml" />
+    <None Include="Views\StoreGIssue\Details.cshtml" />
+    <None Include="Views\StoreGIssue\Edit.cshtml" />
     <None Include="Views\StoreGReceive\Create.cshtml" />
     <None Include="Views\StoreGReceive\Delete.cshtml" />
     <None Include="Views\StoreGReceive\Details.cshtml" />

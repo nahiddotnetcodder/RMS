@@ -1,6 +1,7 @@
-﻿@model RMS.Models.StoreGIssue
+﻿@model RMS.Models.StoreGReceive
+
 @{
-    ViewData["Title"] = "Store & Inventory > Item Movement > Item Issue > Edit Item Issue";
+    ViewData["Title"] = "Store & Inventory > Item Movement > Item Receive > Edit Item";
 }
 <h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
 <hr />
@@ -9,18 +10,18 @@
     <!-- Form Area-->
     <form asp-action="Edit">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input asp-for="GIId" type="hidden"  />
+        <input asp-for="GRId" type="hidden" />
         <div class="btn-group">
             <div class="col-md-10 m-auto">
                 <div class="row">
                     <!-- controls section -->
                     <div class="form-group col-6">
-                        <label asp-for="GIDate" class="control-label"></label>
-                        <input asp-for="GIDate" class="form-control" readonly />
+                        <label asp-for="GRDate" class="control-label"></label>
+                        <input asp-for="GRDate" class="form-control" readonly />
                     </div>
                     <div class="form-group col-6">
                         <label asp-for="SIGId" class="control-label"></label>
-                        <select asp-for="SIGId" class="form-control" asp-items="ViewBag.StoreIGen"></select>
+                        <select asp-for="SIGId" class="form-control" asp-items="ViewBag.IGen"></select>
                         <span asp-validation-for="SIGId" class="text-danger"></span>
                     </div>
                     <div class="form-group col-6">
@@ -40,33 +41,29 @@
                     </div>
                     <div class="form-group col-6">
                         <label asp-for="SUId" class="control-label"></label>
-                        <select asp-for="SUId" class="form-control" asp-items="ViewBag.StoreUnit"></select>
+                        <select asp-for="SUId" class="form-control" asp-items="ViewBag.StoreUnits"></select>
                         <span asp-validation-for="SUId" class="text-danger"></span>
                     </div>
                     <div class="form-group col-6">
-                        <label asp-for="GIQty" class="control-label"></label>
-                        <input asp-for="GIQty" class="form-control" />
-                        <span asp-validation-for="GIQty" class="text-danger"></span>
+                        <label asp-for="GRUPrice" class="control-label"></label>
+                        <input asp-for="GRUPrice" class="form-control" />
+                        <span asp-validation-for="GRUPrice" class="text-danger"></span>
                     </div>
 
                     <div class="form-group col-6">
-                        <label asp-for="GIUPrice" class="control-label"></label>
-                        <input asp-for="GIUPrice" class="form-control" />
-                        <span asp-validation-for="GIUPrice" class="text-danger"></span>
+                        <label asp-for="GRQty" class="control-label"></label>
+                        <input asp-for="GRQty" class="form-control" />
+                        <span asp-validation-for="GRQty" class="text-danger"></span>
                     </div>
                     <div class="form-group col-6">
-                        <label asp-for="GITPrice" class="control-label"></label>
-                        <input asp-for="GITPrice" class="form-control" readonly />
+                        <label asp-for="GRTPrice" class="control-label"></label>
+                        <input asp-for="GRTPrice" class="form-control" readonly />
                     </div>
+
                     <div class="form-group col-6">
-                        <label asp-for="HRDId" class="control-label"></label>
-                        <select asp-for="HRDId" class="form-control" asp-items="ViewBag.HRDepartment"></select>
-                        <span asp-validation-for="HRDId" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-6">
-                        <label asp-for="GIRemarks" class="control-label"></label>
-                        <textarea asp-for="GIRemarks" class="form-control"></textarea>
-                        <span asp-validation-for="GIRemarks" class="text-danger"></span>
+                        <label asp-for="GRRemarks" class="control-label"></label>
+                        <textarea asp-for="GRRemarks" class="form-control"></textarea>
+                        <span asp-validation-for="GRRemarks" class="text-danger"></span>
                     </div>
                 </div>
 
@@ -79,9 +76,6 @@
         </div>
     </form>
 </div>
-
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

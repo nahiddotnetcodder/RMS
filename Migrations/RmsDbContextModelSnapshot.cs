@@ -995,13 +995,45 @@ namespace RMS.Migrations
                     b.ToTable("StoreDClose");
                 });
 
-            modelBuilder.Entity("RMS.Models.StoreGIssue", b =>
+            modelBuilder.Entity("RMS.Models.StoreGIssueDetails", b =>
                 {
-                    b.Property<int>("GIId")
+                    b.Property<int>("GIDId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GIId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GIDId"), 1L, 1);
+
+                    b.Property<float>("GIDQty")
+                        .HasColumnType("real");
+
+                    b.Property<int>("GIDTPrice")
+                        .HasColumnType("int");
+
+                    b.Property<float>("GIDUPrice")
+                        .HasColumnType("real");
+
+                    b.Property<int>("GIMId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SIGId")
+                        .HasColumnType("int");
+
+                    b.HasKey("GIDId");
+
+                    b.HasIndex("GIMId");
+
+                    b.HasIndex("SIGId");
+
+                    b.ToTable("StoreGIssueDetails");
+                });
+
+            modelBuilder.Entity("RMS.Models.StoreGIssueMaster", b =>
+                {
+                    b.Property<int>("GIMId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GIMId"), 1L, 1);
 
                     b.Property<string>("CUser")
                         .HasColumnType("nvarchar(max)");
@@ -1009,50 +1041,21 @@ namespace RMS.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("GIDate")
+                    b.Property<DateTime>("GIMDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<float>("GIQty")
-                        .HasColumnType("real");
-
-                    b.Property<string>("GIRemarks")
+                    b.Property<string>("GIMRemarks")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("GITPrice")
-                        .HasColumnType("int");
-
-                    b.Property<float>("GIUPrice")
-                        .HasColumnType("real");
 
                     b.Property<int>("HRDId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SCId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SIGId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SSCId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SUId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GIId");
+                    b.HasKey("GIMId");
 
                     b.HasIndex("HRDId");
 
-                    b.HasIndex("SCId");
-
-                    b.HasIndex("SIGId");
-
-                    b.HasIndex("SSCId");
-
-                    b.HasIndex("SUId");
-
-                    b.ToTable("StoreGIssue");
+                    b.ToTable("StoreGIssueMasters");
                 });
 
             modelBuilder.Entity("RMS.Models.StoreGoodsStock", b =>
@@ -1424,17 +1427,13 @@ namespace RMS.Migrations
                         .HasForeignKey("HRLeaveDetailHRLDId");
                 });
 
-            modelBuilder.Entity("RMS.Models.StoreGIssue", b =>
+            modelBuilder.Entity("RMS.Models.StoreGIssueDetails", b =>
                 {
-                    b.HasOne("RMS.Models.HRDepartment", "HRDepart")
-                        .WithMany()
-                        .HasForeignKey("HRDId")
+                    b.HasOne("RMS.Models.StoreGIssueMaster", "StoreGIssueMaster")
+                        .WithMany("StoreGIssueDetails")
+                        .HasForeignKey("GIMId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("RMS.Models.StoreCategory", "StoreCategory")
-                        .WithMany()
-                        .HasForeignKey("SCId");
 
                     b.HasOne("RMS.Models.StoreIGen", "StoreIG")
                         .WithMany()
@@ -1442,23 +1441,20 @@ namespace RMS.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RMS.Models.StoreSCategory", "StoreSCategory")
-                        .WithMany()
-                        .HasForeignKey("SSCId");
-
-                    b.HasOne("RMS.Models.StoreUnit", "StoreUnit")
-                        .WithMany()
-                        .HasForeignKey("SUId");
-
-                    b.Navigation("HRDepart");
-
-                    b.Navigation("StoreCategory");
+                    b.Navigation("StoreGIssueMaster");
 
                     b.Navigation("StoreIG");
+                });
 
-                    b.Navigation("StoreSCategory");
+            modelBuilder.Entity("RMS.Models.StoreGIssueMaster", b =>
+                {
+                    b.HasOne("RMS.Models.HRDepartment", "HRDepart")
+                        .WithMany()
+                        .HasForeignKey("HRDId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("StoreUnit");
+                    b.Navigation("HRDepart");
                 });
 
             modelBuilder.Entity("RMS.Models.StoreGoodsStock", b =>
@@ -1562,6 +1558,11 @@ namespace RMS.Migrations
                     b.Navigation("HREDEName");
 
                     b.Navigation("HRLPName");
+                });
+
+            modelBuilder.Entity("RMS.Models.StoreGIssueMaster", b =>
+                {
+                    b.Navigation("StoreGIssueDetails");
                 });
 #pragma warning restore 612, 618
         }
