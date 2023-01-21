@@ -38,7 +38,7 @@ namespace RMS.Repositories
 
         public StoreGIssueMaster GetItem(int rdcid)
         {
-            StoreGIssueMaster item = _context.StoreGIssueMasters.Where(u => u.GIMId == rdcid).FirstOrDefault();
+            StoreGIssueMaster item = _context.StoreGIssueMasters.Include(e=> e.StoreGIssueDetails).Where(u => u.GIMId == rdcid).FirstOrDefault();
             return item;
         }
 

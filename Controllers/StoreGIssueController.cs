@@ -10,22 +10,15 @@ namespace RMS.Controllers
     public class StoreGIssueController : Controller
     {
         private readonly IStoreGIssueMaster _Repo;
+        private readonly IHRDepartment _department;
         private readonly IStoreIGen _storeigen;
-        private readonly IStoreGoodsStock _goodsStock;
-        private readonly IStoreCategory _storeCat;
-        private readonly IStoreSCategory _subCat;
-        private readonly IStoreUnit _unit;
-        private readonly RmsDbContext _context;
 
-        public StoreGIssueController(IStoreGIssueMaster repo, IStoreIGen storeigen, IStoreGoodsStock goodsStock, IStoreCategory storeCat, IStoreSCategory subCat, IStoreUnit unit,RmsDbContext context) // here the repository will be passed by the dependency injection.
+
+        public StoreGIssueController(IStoreGIssueMaster repo, IHRDepartment hRDepartment, IStoreIGen storeigen, IStoreGoodsStock goodsStock, IStoreCategory storeCat, IStoreSCategory subCat, IStoreUnit unit,RmsDbContext context) // here the repository will be passed by the dependency injection.
         {
             _Repo = repo;
+            _department = hRDepartment;
             _storeigen = storeigen;
-            _goodsStock = goodsStock;
-            _storeCat = storeCat;
-            _subCat = subCat;
-            _unit = unit;
-            _context = context;
         }
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pg = 1, int pageSize = 10)
         {
@@ -45,16 +38,14 @@ namespace RMS.Controllers
         }
         private void PopulateViewbags()
         {
-            ViewBag.StoreCategory = GetCategory();
-            ViewBag.StoreSCategory = GetSubCategory();
-            ViewBag.StoreUnits = GetUnit();
+            ViewBag.HRDepart = GetDepartment();
             ViewBag.IGen = GetStoreIGen();
-            ViewBag.IGenCode = GetStoreIGenCode();
         }
 
         public IActionResult Create()
         {
             StoreGIssueMaster item = new StoreGIssueMaster();
+            item.StoreGIssueDetails.Add(new StoreGIssueDetails() { GIDId = 1 });
             PopulateViewbags();
             return View(item);
         }
@@ -172,6 +163,23 @@ namespace RMS.Controllers
             TempData["SuccessMessage"] = item.GIMId.ToString() + " Deleted Successfully";
             return RedirectToAction(nameof(Index), new { pg = currentPage });
         }
+        private List<SelectListItem> GetDepartment()
+        {
+            var lstDepartment = new List<SelectListItem>();
+            PaginatedList<HRDepartment> items = _department.GetItems("HRDName", SortOrder.Ascending, "", 1, 1000);
+            lstDepartment = items.Select(ut => new SelectListItem()
+            {
+                Value = ut.HRDId.ToString(),
+                Text = ut.HRDName
+            }).ToList();
+            var defItem = new SelectListItem()
+            {
+                Value = "",
+                Text = "----Select Department Name----"
+            };
+            lstDepartment.Insert(0, defItem);
+            return lstDepartment;
+        }
 
         private List<SelectListItem> GetStoreIGen()
         {
@@ -190,74 +198,7 @@ namespace RMS.Controllers
             lstDepartment.Insert(0, defItem);
             return lstDepartment;
         }
-        private List<SelectListItem> GetStoreIGenCode()
-        {
-            var lstDepartment = new List<SelectListItem>();
-            PaginatedList<StoreIGen> items = _storeigen.GetItems("SIGItemCode", SortOrder.Ascending, "", 1, 1000);
-            lstDepartment = items.Select(ut => new SelectListItem()
-            {
-                Value = ut.SIGId.ToString(),
-                Text = ut.SIGItemCode 
-            }).ToList();
-            var defItem = new SelectListItem()
-            {
-                Value = "",
-                Text = "----Select Item Code----"
-            };
-            lstDepartment.Insert(0, defItem);
-            return lstDepartment;
-        }
-        private List<SelectListItem> GetCategory()
-        {
-            var storeCat = new List<SelectListItem>();
-            PaginatedList<StoreCategory> items = _storeCat.GetItems("SCName", SortOrder.Ascending, "", 1, 1000);
-            storeCat = items.Select(ut => new SelectListItem()
-            {
-                Value = ut.SCId.ToString(),
-                Text = ut.SCName
-            }).ToList();
-            var defItem = new SelectListItem()
-            {
-                Value = "",
-                Text = "----Select Category Name----"
-            };
-            storeCat.Insert(0, defItem);
-            return storeCat;
-        }
-        private List<SelectListItem> GetSubCategory()
-        {
-            var subCat = new List<SelectListItem>();
-            PaginatedList<StoreSCategory> items = _subCat.GetItems("SSCName", SortOrder.Ascending, "", 1, 1000);
-            subCat = items.Select(ut => new SelectListItem()
-            {
-                Value = ut.SSCId.ToString(),
-                Text = ut.SSCName
-            }).ToList();
-            var defItem = new SelectListItem()
-            {
-                Value = "",
-                Text = "----Select Sub-Category Name----"
-            };
-            subCat.Insert(0, defItem);
-            return subCat;
-        }
-        private List<SelectListItem> GetUnit()
-        {
-            var unit = new List<SelectListItem>();
-            PaginatedList<StoreUnit> items = _unit.GetItems("SUName", SortOrder.Ascending, "", 1, 1000);
-            unit = items.Select(ut => new SelectListItem()
-            {
-                Value = ut.SUId.ToString(),
-                Text = ut.SUName
-            }).ToList();
-            var defItem = new SelectListItem()
-            {
-                Value = "",
-                Text = "----Select Unit Name----"
-            };
-            unit.Insert(0, defItem);
-            return unit;
-        }
+
         [AcceptVerbs("Get", "Post")]
         public JsonResult IsItemExists(string code, int id)
         {

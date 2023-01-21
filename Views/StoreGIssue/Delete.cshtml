@@ -1,74 +1,63 @@
-﻿@model RMS.Models.StoreGReceive
-
+﻿@model RMS.Models.StoreGIssueMaster
 @{
     ViewData["Title"] = "Store & Inventory > Item Movement > Item Receive > Delete Item";
 }
-<h5 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h5>
-<div>
-    <h5 class="text-danger">Are you sure you want to delete this?</h5>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.GRDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.GRDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SIGId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StoreIGens.SIGItemName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SCId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StoreCategory.SCName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SSCId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StoreSCategory.SSCName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SUId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StoreUnit.SUName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.GRUPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.GRUPrice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.GRQty)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.GRQty)
-        </dd>
-       
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.GRTPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.GRTPrice)
-        </dd>
-    </dl>
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<hr />
 
-    <form asp-action="Delete">
-        <div class="text-danger btn-group" asp-validation-summary="ModelOnly"></div>
-        <input type="hidden" asp-for="GRId" />
-        <input type="submit" value="Delete" class="btn btn-danger" />
-        <a class="btn btn-secondary" asp-action="index"
-           asp-route-pg="@TempData.Peek("CurrentPage")">Back</a>
-    </form>
-</div>
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+<form asp-action="Delete">
+     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="GIMId"/>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="form-group col-6">
+                <label asp-for="GIMDate" class="control-label"></label>
+                <input asp-for="GIMDate" class="form-control" readonly/>
+            </div>
+            <div class="form-group col-6">
+                <label asp-for="HRDId" class="control-label"></label>
+                <input asp-for="HRDepart.HRDName" class="form-control" readonly />
+            </div>
+            <div class="form-group col-12">
+                <label asp-for="GIMRemarks" class="control-label"></label>
+                <textarea asp-for="GIMRemarks" class="form-control" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <table class="table tabletable-striped border mt-2">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.StoreGIssueDetails.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].StoreIG.SIGItemName" class="form-control" readonly />
+                        </td>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].GIDQty" class="form-control" readonly>
+                        </td>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].GIDUPrice" class="form-control" readonly>
+                        </td>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].GIDTPrice" class="form-control" readonly>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="index" class="btn btn-success"> Back</a>
+        </div>
+    </div>
+</form>

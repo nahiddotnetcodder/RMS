@@ -1,105 +1,66 @@
-﻿@model RMS.Models.StoreGReceive
+﻿@model RMS.Models.StoreGIssueMaster
 @{
-    ViewData["Title"] = "Store & Inventory > Item Movement > Item Receive > Item Details";
+    ViewData["Title"] = "Store & Inventory > Item Movement > Item Issue > Details List";
 }
-
-<h6 style="color: #1275AE; margin: 10px;">@ViewData["Title"]</h6>
+<h6 style="color: #1275AE; margin-top: 10px;">@ViewData["Title"]</h6>
+<hr />
 
 <form asp-action="Details">
-    <div class="row border m-2">
-        <div class="col-md-8 m-auto p-4">
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="GRDate" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="GRDate" class="form-control" readonly />
-                </div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="GIMId"/>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="form-group col-6">
+                <label asp-for="GIMDate" class="control-label"></label>
+                <input asp-for="GIMDate" class="form-control" readonly/>
             </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="SIGId" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="StoreIGens.SIGItemName" class="form-control" readonly />
-                </div>
+            <div class="form-group col-6">
+                <label asp-for="HRDId" class="control-label"></label>
+                <input asp-for="HRDepart.HRDName" class="form-control" readonly />
             </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="SCId" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="StoreCategory.SCName" class="form-control" readonly />
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="SSCId" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="StoreSCategory.SSCName" class="form-control" readonly />
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="SUId" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="StoreUnit.SUName" class="form-control" readonly />
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="GRUPrice" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="GRUPrice" class="form-control" readonly />
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="GRQty" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="GRQty" class="form-control" readonly />
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="GRTPrice" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="GRTPrice" class="form-control" readonly />
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="GRRemarks" class="control-label"></label>
-                </div>
-                <div class="col-8">
-                    <textarea asp-for="GRRemarks" class="form-control" readonly ></textarea>
-                </div>
-            </div>
-
-
-            <div class="form-group btn-group">
-                <a class="btn btn-success" asp-action="index"
-                   asp-route-pg="@TempData.Peek("CurrentPage")">
-                    <i class="fas fa-arrow-left"></i>
-                    Back To List
-               </a>
+            <div class="form-group col-12">
+                <label asp-for="GIMRemarks" class="control-label"></label>
+                <textarea asp-for="GIMRemarks" class="form-control" readonly></textarea>
             </div>
         </div>
     </div>
-
+    <div class="col-md-12" >
+        <table id="ExpTable" class="table tabletable-striped border mt-2">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.StoreGIssueDetails.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].StoreIG.SIGItemName" class="form-control" readonly />
+                        </td>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].GIDQty" class="form-control" readonly>
+                        </td>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].GIDUPrice" class="form-control" readonly>
+                        </td>
+                        <td>
+                            <input asp-for="@Model.StoreGIssueDetails[i].GIDTPrice" class="form-control" readonly>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="form-group btn-group mt-4">
+            <a class="btn btn-success" asp-action="index"
+                asp-route-pg="@TempData.Peek("CurrentPage")">
+                <i class="fas fa-arrow-left"></i>
+                Back To List
+            </a>
+        </div>
+    </div>
 </form>
-
-
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
