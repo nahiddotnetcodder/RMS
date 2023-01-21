@@ -52,6 +52,7 @@ namespace RMS.Controllers
         public IActionResult Create()
         {
             StoreIGen item = new StoreIGen();
+            item.SIGItemCode = _Repo.GetItemCode(); ///auto-Genarate ItemCode
             PopulateViewbags();
             return View(item);
         }

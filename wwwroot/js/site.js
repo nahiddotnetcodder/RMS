@@ -73,7 +73,9 @@ function AddItem(btn) {
             x[cnt].value = '';
 
     }
+    
 }
+
 
 
 

@@ -26,7 +26,7 @@ namespace RMS.Models
         public virtual StoreSCategory StoreSCategory { get; set; }
 
 
-        [Required(ErrorMessage = "This field is required")]
+       
         [Display(Name = "Item Code")]
         [MaxLength(50)]
         [StringLength(50)]

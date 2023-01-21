@@ -10,6 +10,8 @@ namespace RMS.Interfaces
         StoreIGen Delete(StoreIGen storeIGen);
         public bool IsItemExists(string name);
         public bool IsItemExists(string code, int id);
+
+        public string GetItemCode(); ///auto-Genarate ItemCode 
     }
 }
 

@@ -1305,12 +1305,20 @@
       "PackagePath": "staticwebassets\\font\\brush script mt kursiv.ttf"
     },
     {
+      "Id": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\224f391a-4e11-47bd-ba08-13ac1cc3940bdownload.jpg",
+      "PackagePath": "staticwebassets\\images\\224f391a-4e11-47bd-ba08-13ac1cc3940bdownload.jpg"
+    },
+    {
       "Id": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\background 150p-01.jpg",
       "PackagePath": "staticwebassets\\images\\background 150p-01.jpg"
     },
     {
       "Id": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\band-logo.png",
       "PackagePath": "staticwebassets\\images\\band-logo.png"
+    },
+    {
+      "Id": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\caed15bd-556d-4dca-acd0-f69bc4b33c51download (2).jpg",
+      "PackagePath": "staticwebassets\\images\\caed15bd-556d-4dca-acd0-f69bc4b33c51download (2).jpg"
     },
     {
       "Id": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\noimage.png",

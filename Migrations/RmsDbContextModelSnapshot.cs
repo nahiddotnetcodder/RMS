@@ -1012,7 +1012,7 @@ namespace RMS.Migrations
                     b.Property<float>("GIDUPrice")
                         .HasColumnType("real");
 
-                    b.Property<int>("GIMId")
+                    b.Property<int?>("GIMId")
                         .HasColumnType("int");
 
                     b.Property<int>("SIGId")
@@ -1431,9 +1431,7 @@ namespace RMS.Migrations
                 {
                     b.HasOne("RMS.Models.StoreGIssueMaster", "StoreGIssueMaster")
                         .WithMany("StoreGIssueDetails")
-                        .HasForeignKey("GIMId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GIMId");
 
                     b.HasOne("RMS.Models.StoreIGen", "StoreIG")
                         .WithMany()

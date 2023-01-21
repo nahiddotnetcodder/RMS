@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FHahACE36iSiVbh1+DGGJcgPXS3D8wLc6UlE1oNtFLE=",
+  "Hash": "aW8JsvSX921T4gM9hn2Ie33oKHwoeaMYUS3VSPIEyOE=",
   "Source": "RMS",
   "BasePath": "_content/RMS",
   "Mode": "Default",
@@ -6171,6 +6171,23 @@
       "OriginalItemSpec": "wwwroot\\font\\Helvetica-Oblique.ttf"
     },
     {
+      "Identity": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\224f391a-4e11-47bd-ba08-13ac1cc3940bdownload.jpg",
+      "SourceId": "RMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\",
+      "BasePath": "_content/RMS",
+      "RelativePath": "images/224f391a-4e11-47bd-ba08-13ac1cc3940bdownload.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\224f391a-4e11-47bd-ba08-13ac1cc3940bdownload.jpg"
+    },
+    {
       "Identity": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\background 150p-01.jpg",
       "SourceId": "RMS",
       "SourceType": "Discovered",
@@ -6203,6 +6220,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\band-logo.png"
+    },
+    {
+      "Identity": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\caed15bd-556d-4dca-acd0-f69bc4b33c51download (2).jpg",
+      "SourceId": "RMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\",
+      "BasePath": "_content/RMS",
+      "RelativePath": "images/caed15bd-556d-4dca-acd0-f69bc4b33c51download (2).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\caed15bd-556d-4dca-acd0-f69bc4b33c51download (2).jpg"
     },
     {
       "Identity": "E:\\Project CIT (Nahid Hasan)\\RMS\\wwwroot\\images\\noimage.png",

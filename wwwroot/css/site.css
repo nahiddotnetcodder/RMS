@@ -105,7 +105,8 @@ body {
 /*end*/
 /*registration form css*/
 .register-box {
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4);*/
+    background-color: #1abc9c;
     margin: auto auto;
     padding: 40px;
     border-radius: 5px;
@@ -119,7 +120,7 @@ body {
     color: #fff;
 }
 .form-box-register{
-    background-image: url('../images/background 150p-01.jpg');
+    /*background-image: url('../images/background 150p-01.jpg');*/
     width: 100%;
     height: 100vh !important;
     background-size: cover;

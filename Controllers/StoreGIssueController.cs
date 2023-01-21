@@ -46,6 +46,7 @@ namespace RMS.Controllers
         {
             StoreGIssueMaster item = new StoreGIssueMaster();
             item.StoreGIssueDetails.Add(new StoreGIssueDetails() { GIDId = 1 });
+            item.GIMDate = _Repo.GetDCDate();
             PopulateViewbags();
             return View(item);
         }
@@ -99,6 +100,8 @@ namespace RMS.Controllers
             PopulateViewbags();
             return View(item);
         }
+
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             StoreGIssueMaster item = _Repo.GetItem(id);

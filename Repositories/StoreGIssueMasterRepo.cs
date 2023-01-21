@@ -30,8 +30,14 @@ namespace RMS.Repositories
 
         public StoreGIssueMaster Edit(StoreGIssueMaster storeGIssue)
         {
+            List<StoreGIssueDetails> issueDetails = _context.StoreGIssueDetails.Where(d => d.GIDId == storeGIssue.GIMId).ToList();
+            _context.StoreGIssueDetails.RemoveRange(issueDetails);
+            _context.SaveChanges();
+
+
             _context.StoreGIssueMasters.Attach(storeGIssue);
             _context.Entry(storeGIssue).State = EntityState.Modified;
+            _context.StoreGIssueDetails.AddRange(storeGIssue.StoreGIssueDetails);
             _context.SaveChanges();
             return storeGIssue;
         }
@@ -47,7 +53,8 @@ namespace RMS.Repositories
             List<StoreGIssueMaster> items;
             if (SearchText != "" && SearchText != null)
             {
-                items = _context.StoreGIssueMasters.Where(n => n.GIMRemarks.Contains(SearchText) || n.CUser.Contains(SearchText))
+                items = _context.StoreGIssueMasters.Where(n => n.HRDepart.HRDName.Contains(SearchText) || n.CUser.Contains(SearchText))
+                    .Include(a=> a.HRDepart)
                     .ToList();
             }
             else
@@ -85,6 +92,14 @@ namespace RMS.Repositories
                 return true;
             else
                 return false;
+        }
+
+        public DateTime GetDCDate()
+        {
+            DateTime dt;
+            var lastDate = _context.StoreDClose.Max(n => n.SDCDate);
+            dt = DateTime.Now.Date;
+            return dt;
         }
     }
 }

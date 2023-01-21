@@ -28,7 +28,8 @@ namespace RMS.Models
         [Display(Name = "Designation:")]
         public int HRDeId { get; set; }
         public virtual HRDesignation HRDesig { get; set; }
-        [Required]
+        
+
         [StringLength(10)]
         [Display(Name = "Emp. Id:")]
         public string HREDEId { get; set; }

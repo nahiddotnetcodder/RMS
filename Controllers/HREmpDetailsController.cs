@@ -50,7 +50,6 @@ namespace RMS.Controllers
         public IActionResult Create(int id=0)
         {
             HREmpDetails empdetails = new HREmpDetails();
-
             PopulateViewbags();
             return View(empdetails);
         }
@@ -64,8 +63,8 @@ namespace RMS.Controllers
             {
                 if (empdetails.HREDEName.Length < 4 || empdetails.HREDEName == null)
                     errMessage = "Employee Name Must be atleast 4 Characters";
-                if (_hrempdetailsRepo.IsEmpCodeExists(empdetails.HREDEId) == true)
-                    errMessage = errMessage + " " + " Employee Id. " + empdetails.HREDEId + " Exists Already";
+                if (_hrempdetailsRepo.IsEmpCodeExists(empdetails.HREDEName) == true)
+                    errMessage = "Exists Already";
 
                 if (errMessage == "")
                 {

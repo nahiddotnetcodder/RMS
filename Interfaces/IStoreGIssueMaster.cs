@@ -10,6 +10,8 @@ namespace RMS.Interfaces
         StoreGIssueMaster Delete(StoreGIssueMaster storeGIssue);
         public bool IsItemExists(string name);
         public bool IsItemExists(string name, int sgid);
+
+        public DateTime GetDCDate();
     }
 }
 

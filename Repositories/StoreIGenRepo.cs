@@ -96,5 +96,26 @@ namespace RMS.Repositories
             else
                 return false;
         }
+
+        ///auto-Genarate ItemCode
+        public string GetItemCode()
+        {
+
+            string itemCode = "";
+            var lastitemCode = _context.StoreIGen.Max(n => n.SIGItemCode);
+
+            if (lastitemCode == null)
+            {
+                itemCode = "IT0001";
+            }
+            else
+            {
+                int lastdigit = 1;
+                int.TryParse(lastitemCode.Substring(2, 5).ToString(), out lastdigit);
+
+                itemCode = "IT" + (lastdigit + 1).ToString().PadLeft(5, '0');
+            }
+            return itemCode;
+        }
     }
 }
